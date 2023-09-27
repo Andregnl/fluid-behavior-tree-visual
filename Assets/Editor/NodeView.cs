@@ -11,7 +11,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public Port inputPort;
     public Port outputPort;
 
-    public NodeView(ITask node)
+    public NodeView(ITask node) : base("Assets/Editor/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;
@@ -41,7 +41,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
         if (node is TaskBase) return;
 
-        outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
+        outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Multi, typeof(bool));
 
         if (outputPort != null)
         {
