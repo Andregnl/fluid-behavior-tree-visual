@@ -1,0 +1,91 @@
+#node-border {
+    background-color: rgba(255, 0, 0, 255);
+    background-image: none;
+}
+
+#input {
+    align-items: center;
+    right: -3px;
+}
+
+#output {
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    left: -5px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: relative;
+}
+
+#selection-border {
+    border-left-color: rgba(0, 72, 255, 255);
+    border-right-color: rgba(0, 72, 255, 255);
+    border-top-color: rgba(0, 72, 255, 255);
+    border-bottom-color: rgba(0, 72, 255, 255);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+:hover > #selection-border {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+:selected > #selection-border {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+:hover:selected > #selection-border {
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+}
+
+.node {
+    min-width: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#title {
+    align-items: center;
+    -unity-font-style: bold;
+    color: rgba(0, 0, 0, 255);
+    -unity-text-align: upper-center;
+    font-size: 14px;
+}
+
+#description {
+    -unity-font-style: normal;
+    -unity-text-align: upper-left;
+    color: rgba(0, 0, 0, 255);
+}
+
+#divider {
+    min-height: 1px;
+    background-color: rgba(5, 0, 0, 255);
+}
