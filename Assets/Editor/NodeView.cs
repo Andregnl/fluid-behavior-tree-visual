@@ -33,7 +33,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         if (inputPort != null)
         {
             inputPort.portName = "";
-            inputPort.style.FlexDirection = FlexDirection.Column;
+            //inputPort.style.FlexDirection = FlexDirection.Column;
             inputContainer.Add(inputPort);
         }
     }
@@ -47,7 +47,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         if (outputPort != null)
         {
             outputPort.portName = "";
-            outputPort.style.FlexDirection = FlexDirection.ColumnReverse;
+            //outputPort.style.FlexDirection = FlexDirection.ColumnReverse;
             outputContainer.Add(outputPort);
         }
     }
