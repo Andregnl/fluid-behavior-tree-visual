@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -18,6 +19,7 @@ public class VisualFluidBTView : GraphView
     public new class UxmlFactory : UxmlFactory<VisualFluidBTView, GraphView.UxmlTraits> {}
 
     BehaviorTree tree;
+    public Action<NodeView> OnNodeSelected;
 
     public VisualFluidBTView()
     {
@@ -136,6 +138,7 @@ public class VisualFluidBTView : GraphView
     void CreateNodeView(ITask node)
     {
         NodeView nodeView = new NodeView(node);
+        nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
     }
 
