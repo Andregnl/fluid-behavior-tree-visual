@@ -33,6 +33,7 @@ public class VisualFluidBT : EditorWindow
         inspectorView =  root.Q<InspectorView>();
 
         OnSelectionChange();
+        visualFuildBTView.OnNodeSelected = OnNodeSelectionChanged;
         SetupButtonHandler();
     }
 
@@ -62,5 +63,9 @@ public class VisualFluidBT : EditorWindow
         {
             visualFuildBTView.PopulateView(tree);
         }
+    }
+
+    void OnNodeSelectionChanged(NodeView node){
+        inspectorView.UpdateSelection(node);
     }
 }
