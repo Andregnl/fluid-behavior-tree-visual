@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 using CleverCrow.Fluid.BTs.TaskParents;
 using CleverCrow.Fluid.BTs.Tasks;
+using CleverCrow.Fluid.BTs.Decorators;
 
 public class NodeView : UnityEditor.Experimental.GraphView.Node
 {
@@ -39,14 +40,29 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     void CreateOutputPorts()
     {
-        if (node is TaskBase) return;
-
-        outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
-
-        if (outputPort != null)
+        if (node is TaskBase)
         {
-            outputPort.portName = "";
-            outputContainer.Add(outputPort);
+            return;
+        }
+        else if (node is DecoratorBase || node is TaskRoot)
+        {
+            outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+
+            if (outputPort != null)
+            {
+                outputPort.portName = "";
+                outputContainer.Add(outputPort);
+            }
+        }
+        else if (node is TaskParentBase)
+        {
+            outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
+
+            if (outputPort != null)
+            {
+                outputPort.portName = "";
+                outputContainer.Add(outputPort);
+            }
         }
     }
 

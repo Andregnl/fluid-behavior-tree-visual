@@ -9,6 +9,7 @@ using CleverCrow.Fluid.BTs.Trees;
 using CleverCrow.Fluid.BTs.Tasks;
 using CleverCrow.Fluid.BTs.Tasks.Actions;
 using CleverCrow.Fluid.BTs.TaskParents;
+using CleverCrow.Fluid.BTs.TaskParents.Composites;
 
 public class VisualFluidBTView : GraphView
 {
@@ -40,8 +41,16 @@ public class VisualFluidBTView : GraphView
 
         foreach (var type in types)
         {
-            evt.menu.AppendAction($"{type.BaseType.Name} {type.Name}", (a) => CreateNode(type));
+            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
         }
+
+        types = TypeCache.GetTypesDerivedFrom<CompositeBase>();
+
+        foreach (var type in types)
+        {
+            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
+        }
+
 
         evt.menu.AppendAction("Root Node", (a) => { tree.CreateRootNode(); PopulateView(tree); });
     }
