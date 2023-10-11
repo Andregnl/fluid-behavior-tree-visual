@@ -45,7 +45,7 @@ public class VisualFluidBTView : GraphView
             evt.menu.AppendAction($"{type.BaseType.Name} {type.Name}", (a) => CreateNode(type));
         }
 
-        evt.menu.AppendAction("Root Node", (a) => { tree.CreateRootNode(); PopulateView(tree); });
+        evt.menu.AppendAction("Root Node", (a) => { tree.CreateRootNode(); CreateNodeView(tree.Root); PopulateView(tree); });
     }
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
@@ -128,6 +128,7 @@ public class VisualFluidBTView : GraphView
     
     void CreateNodeView(ITask node)
     {
+        Debug.Log("Create Node View");
         NodeView nodeView = new NodeView(node);
         nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
