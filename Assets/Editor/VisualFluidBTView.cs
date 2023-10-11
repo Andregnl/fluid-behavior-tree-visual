@@ -141,6 +141,7 @@ public class VisualFluidBTView : GraphView
 
     public void SaveTree()
     {
+        Debug.Log("Saved Tree");
         tree.SaveTree();
     }
 }
