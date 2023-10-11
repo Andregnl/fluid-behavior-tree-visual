@@ -9,8 +9,8 @@ namespace CleverCrow.Fluid.BTs.Tasks {
         /// </summary>
         public virtual string Name { get; set; }
 
-        [SerializeField][HideInInspector] public Vector2 position = new Vector2(0.0f, 0.0f);
-        [SerializeField][HideInInspector] public string guid;
+        [HideInInspector] public Vector2 position = new Vector2(0.0f, 0.0f);
+        [HideInInspector] public string guid;
 
         public void SetPosition(Vector2 pos)
         {
@@ -35,7 +35,7 @@ namespace CleverCrow.Fluid.BTs.Tasks {
         /// </summary>
         public IBehaviorTree ParentTree { get; set; }
 
-        [SerializeField][HideInInspector] private List<ITask> _Children = new List<ITask>();
+        [HideInInspector] private List<ITask> _Children = new List<ITask>();
         [HideInInspector] public virtual List<ITask> Children { get => _Children; }
 
         /// <summary>
