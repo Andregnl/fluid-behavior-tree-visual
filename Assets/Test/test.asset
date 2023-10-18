@@ -87,6 +87,24 @@ MonoBehaviour:
   guid: 1c0dba49924b5cc729b50476e56984ce
   _Children: []
   LastStatus: 0
+--- !u!114 &7660639143530429562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 223, y: 121}
+  guid: cd15e317732d67f43b0abc45cf409f61
+  _Children:
+  - {fileID: 5269720137847692117}
+  - {fileID: 2599138244310678246}
+  LastStatus: 0
 --- !u!114 &8648247992410989263
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using CleverCrow.Fluid.BTs.Tasks;
+using CleverCrow.Fluid.BTs.Tasks;
 
 namespace CleverCrow.Fluid.BTs.TaskParents {
     [System.Serializable]
