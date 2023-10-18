@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ using CleverCrow.Fluid.BTs.Trees;
 using CleverCrow.Fluid.BTs.Tasks;
 using CleverCrow.Fluid.BTs.Tasks.Actions;
 using CleverCrow.Fluid.BTs.TaskParents;
+using CleverCrow.Fluid.BTs.TaskParents.Composites;
+using CleverCrow.Fluid.BTs.Decorators;
 
 public class VisualFluidBTView : GraphView
 {
@@ -38,14 +41,20 @@ public class VisualFluidBTView : GraphView
         // var type = typeof(TestStructure);
         // evt.menu.AppendAction("Create node", (a) => CreateNode(type));
 
-        var types = TypeCache.GetTypesDerivedFrom<ActionBase>();
-
-        foreach (var type in types)
-        {
-            evt.menu.AppendAction($"{type.BaseType.Name} {type.Name}", (a) => CreateNode(type));
-        }
+        AddTypesToMenu(evt, TypeCache.GetTypesDerivedFrom<ActionBase>().ToList());
+        AddTypesToMenu(evt, TypeCache.GetTypesDerivedFrom<CompositeBase>().ToList());
+        AddTypesToMenu(evt, TypeCache.GetTypesDerivedFrom<DecoratorBase>().ToList());
+        AddTypesToMenu(evt, TypeCache.GetTypesDerivedFrom<ConditionBase>().ToList());
 
         evt.menu.AppendAction("Root Node", (a) => { tree.CreateRootNode(); CreateNodeView(tree.Root); PopulateView(tree); });
+    }
+
+    private void AddTypesToMenu(ContextualMenuPopulateEvent evt, List<Type> types)
+    {
+        foreach (var type in types)
+        {
+            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
+        }
     }
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
