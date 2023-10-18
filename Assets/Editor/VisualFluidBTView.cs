@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -18,6 +19,7 @@ public class VisualFluidBTView : GraphView
     public new class UxmlFactory : UxmlFactory<VisualFluidBTView, GraphView.UxmlTraits> {}
 
     BehaviorTree tree;
+    public Action<NodeView> OnNodeSelected;
 
     public VisualFluidBTView()
     {
@@ -44,14 +46,14 @@ public class VisualFluidBTView : GraphView
         AddTypesToMenu(evt, TypeCache.GetTypesDerivedFrom<DecoratorBase>().ToList());
         AddTypesToMenu(evt, TypeCache.GetTypesDerivedFrom<ConditionBase>().ToList());
 
-        evt.menu.AppendAction("Root Node", (a) => { tree.CreateRootNode(); PopulateView(tree); });
+        evt.menu.AppendAction("Root Node", (a) => { tree.CreateRootNode(); CreateNodeView(tree.Root); PopulateView(tree); });
     }
 
     private void AddTypesToMenu(ContextualMenuPopulateEvent evt, List<Type> types)
     {
         foreach (var type in types)
         {
-            evt.menu.AppendAction($"{type.BaseType.Name} {type.Name}", (a) => CreateNode(type));
+            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
         }
     }
 
@@ -135,7 +137,9 @@ public class VisualFluidBTView : GraphView
     
     void CreateNodeView(ITask node)
     {
+        Debug.Log("Create Node View");
         NodeView nodeView = new NodeView(node);
+        nodeView.OnNodeSelected = OnNodeSelected;
         AddElement(nodeView);
     }
 
