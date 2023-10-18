@@ -14,7 +14,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public Port inputPort;
     public Port outputPort;
 
-    public NodeView(ITask node)
+    public NodeView(ITask node) : base("Assets/Editor/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;
@@ -36,6 +36,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         if (inputPort != null)
         {
             inputPort.portName = "";
+            //inputPort.style.FlexDirection = FlexDirection.Column;
             inputContainer.Add(inputPort);
         }
     }
@@ -48,7 +49,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         }
         else if (node is DecoratorBase || node is TaskRoot)
         {
-            outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(bool));
+            outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
 
             if (outputPort != null)
             {
@@ -58,7 +59,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         }
         else if (node is TaskParentBase)
         {
-            outputPort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Multi, typeof(bool));
+            outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Multi, typeof(bool));
 
             if (outputPort != null)
             {
