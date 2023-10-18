@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CleverCrow.Fluid.BTs.TaskParents;
 using CleverCrow.Fluid.BTs.Tasks;
 using CleverCrow.Fluid.BTs.Trees;
@@ -8,7 +8,7 @@ namespace CleverCrow.Fluid.BTs.Decorators {
     public abstract class DecoratorBase : ITaskParent {
         public override bool Enabled { get; set; } = true;
 
-        public ITask Child => Children.Count > 0 ? Children[0] : null;
+        [HideInInspector] public ITask Child => Children.Count > 0 ? Children[0] : null;
 
         public override TaskStatus Update () {
             base.Update();
