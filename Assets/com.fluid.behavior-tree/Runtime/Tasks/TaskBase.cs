@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using CleverCrow.Fluid.BTs.Trees;
 using UnityEngine;
+using UnityEditor;
 
 namespace CleverCrow.Fluid.BTs.Tasks {
     public abstract class TaskBase : GenericTaskBase {
@@ -11,7 +12,7 @@ namespace CleverCrow.Fluid.BTs.Tasks {
         private bool _active;
 
         public override bool Enabled { get; set; } = true;
-        public override List<ITask> Children { get; } = null;
+        [HideInInspector] public override List<ITask> Children { get; } = null;
 
         public override TaskStatus Update () {
             base.Update();

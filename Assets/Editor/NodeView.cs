@@ -1,12 +1,15 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 using CleverCrow.Fluid.BTs.TaskParents;
 using CleverCrow.Fluid.BTs.Tasks;
+using CleverCrow.Fluid.BTs.Decorators;
 
 public class NodeView : UnityEditor.Experimental.GraphView.Node
 {
+    public Action<NodeView> OnNodeSelected;
     public ITask node;
     public Port inputPort;
     public Port outputPort;
@@ -40,15 +43,29 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     void CreateOutputPorts()
     {
-        if (node is TaskBase) return;
-
-        outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Multi, typeof(bool));
-
-        if (outputPort != null)
+        if (node is TaskBase)
         {
-            outputPort.portName = "";
-            //outputPort.style.FlexDirection = FlexDirection.ColumnReverse;
-            outputContainer.Add(outputPort);
+            return;
+        }
+        else if (node is DecoratorBase || node is TaskRoot)
+        {
+            outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
+
+            if (outputPort != null)
+            {
+                outputPort.portName = "";
+                outputContainer.Add(outputPort);
+            }
+        }
+        else if (node is TaskParentBase)
+        {
+            outputPort = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Multi, typeof(bool));
+
+            if (outputPort != null)
+            {
+                outputPort.portName = "";
+                outputContainer.Add(outputPort);
+            }
         }
     }
 
@@ -57,5 +74,13 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         base.SetPosition(newPos);
         Vector2 pos = new Vector2(newPos.xMin, newPos.yMin);
         node.SetPosition(pos);
+    }
+
+    public override void OnSelected()
+    {
+        base.OnSelected();
+        if (OnNodeSelected != null) {
+            OnNodeSelected.Invoke(this);
+        }
     }
 }

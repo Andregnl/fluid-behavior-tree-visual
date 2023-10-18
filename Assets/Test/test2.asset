@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6456779219604365703
+--- !u!114 &-8881095534909824400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fb286ffcf94e088a94f160119e5d52, type: 3}
   m_Name: TaskRoot
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
-  guid: 7b03de01f808831c8adf915689bce11b
+  position: {x: -36.28, y: 116.479996}
+  guid: c0bfd8f2815bfacea9760d9133806c6a
   _Children:
-  - {fileID: -4299861739298555791}
+  - {fileID: 3895482447504726315}
   LastStatus: 0
---- !u!114 &-4299861739298555791
+--- !u!114 &-6745826201119976766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29,8 +29,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f7e7cff54b5dab282922ff20297669, type: 3}
   m_Name: DebugLogNode
   m_EditorClassIdentifier: 
-  position: {x: 0, y: -193.76001}
-  guid: 4a4de1ff72163c6afbc084f89a51b47a
+  position: {x: 309.36002, y: 116}
+  guid: ee331428f0230127d9687dddabccbf15
   _Children: []
   LastStatus: 0
 --- !u!114 &11400000
@@ -45,8 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e09d50cf948054d824c8ceee70cac6, type: 3}
   m_Name: test2
   m_EditorClassIdentifier: 
+  _Root: {fileID: -8881095534909824400}
   _tasks: []
   allNodes:
-  - {fileID: -6456779219604365703}
-  - {fileID: -4299861739298555791}
+  - {fileID: -8881095534909824400}
+  - {fileID: 3895482447504726315}
+  - {fileID: -6745826201119976766}
   nodesToSave: []
+--- !u!114 &3895482447504726315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 124, y: 116.00001}
+  guid: d47f680a74c49e7dabcb87ca2d956fe3
+  _Children:
+  - {fileID: -6745826201119976766}
+  LastStatus: 0

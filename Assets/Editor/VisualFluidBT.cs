@@ -5,6 +5,7 @@ using CleverCrow.Fluid.BTs.Trees;
 using System.Collections.Generic;
 using CleverCrow.Fluid.BTs.Tasks;
 
+[InitializeOnLoadAttribute]
 public class VisualFluidBT : EditorWindow
 {
     [SerializeField]
@@ -20,8 +21,15 @@ public class VisualFluidBT : EditorWindow
         wnd.titleContent = new GUIContent("VisualFluidBT");
     }
 
+    void OnEnterPlayMode(PlayModeStateChange state)
+    {
+        visualFuildBTView.SaveTree();
+    }
+
     public void CreateGUI()
     {
+        EditorApplication.playModeStateChanged += OnEnterPlayMode;
+
         // Each editor window contains a root VisualElement object
         VisualElement root = rootVisualElement;
 
@@ -33,6 +41,7 @@ public class VisualFluidBT : EditorWindow
         inspectorView =  root.Q<InspectorView>();
 
         OnSelectionChange();
+        visualFuildBTView.OnNodeSelected = OnNodeSelectionChanged;
         SetupButtonHandler();
     }
 
@@ -62,5 +71,9 @@ public class VisualFluidBT : EditorWindow
         {
             visualFuildBTView.PopulateView(tree);
         }
+    }
+
+    void OnNodeSelectionChanged(NodeView node){
+        inspectorView.UpdateSelection(node);
     }
 }
