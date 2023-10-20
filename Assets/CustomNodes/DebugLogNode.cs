@@ -6,9 +6,10 @@ using CleverCrow.Fluid.BTs.Tasks.Actions;
 
 public class DebugLogNode : ActionBase
 {
+    public string message = "Debug Log Node";
     protected override TaskStatus OnUpdate()
     {
-        Debug.Log("Mensagem");
+        Debug.Log(message);
         return TaskStatus.Success;
     }
 }
