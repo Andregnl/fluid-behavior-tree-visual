@@ -1,5 +1,4 @@
 # Visual BT
-
 #### This section contains information about Visual BT, the project being developed as the code assignment of MAC0332 - Software Engineering
 
 Visual BT is a visual implementation of behavior trees for Unity projects. This is an increment of [fluid BT](https://github.com/ashblue/Visual-behavior-tree), with the added programmable GUI and some new nodes.
@@ -28,6 +27,19 @@ Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas
 - Create the tree you want by selecting the nodes on the right-click menu, editing their properties in the left _Inspector_ and then connecting them by creating edges
 - When you are done hit the `Save` button below the _Inspector_ View
 - Run the scene to check your behavior
+
+### Screenshots
+![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/34aa6dbb-65c5-4e2a-9a06-d13c865497d2)
+
+The first image demonstrates how to open the VisualFluidBT window
+
+![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/112e2153-cde3-43ee-b8e9-837db90b515c)
+
+This image shows the path to create a new Behavior Tree asset
+
+![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/ed2bcc38-1bcd-4ab5-a4e4-1914442cb378)
+
+In the image above, we can see an example of a tree being edited
 
 ### Implementation of the Graphical Interface
 The first step in creating the new Visual and programmable interface for FluidBT was
