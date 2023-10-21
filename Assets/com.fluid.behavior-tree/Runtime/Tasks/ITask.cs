@@ -35,8 +35,8 @@ namespace CleverCrow.Fluid.BTs.Tasks {
         /// </summary>
         public IBehaviorTree ParentTree { get; set; }
 
-        [HideInInspector] private List<ITask> _Children = new List<ITask>();
-        [HideInInspector] public virtual List<ITask> Children { get => _Children; }
+        [SerializeField] private List<ITask> _Children = new List<ITask>();
+        public virtual List<ITask> Children { get => _Children; }
 
         /// <summary>
         /// Last status returned by Update

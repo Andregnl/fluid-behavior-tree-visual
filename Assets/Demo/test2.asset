@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1961694238319942420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70544439a5ba70d7a4ccdfcd579c836, type: 3}
+  m_Name: MoveRobotTowards
+  m_EditorClassIdentifier: 
+  position: {x: 149.99997, y: 82.4182}
+  guid: 28113b65277ebced6b1dd74a4fb3a8fd
+  _Children: []
+  LastStatus: 0
+  transformToFollow: {fileID: 0}
+  speed: 10
+--- !u!114 &-44541562918929604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fb286ffcf94e088a94f160119e5d52, type: 3}
+  m_Name: TaskRoot
+  m_EditorClassIdentifier: 
+  position: {x: 150, y: -141.86247}
+  guid: d2cbc74e4f565b4f9acd1a248a8378a2
+  _Children:
+  - {fileID: 3518379206215934501}
+  LastStatus: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e09d50cf948054d824c8ceee70cac6, type: 3}
+  m_Name: test2
+  m_EditorClassIdentifier: 
+  _Root: {fileID: -44541562918929604}
+  _tasks: []
+  allNodes:
+  - {fileID: -44541562918929604}
+  - {fileID: 3518379206215934501}
+  - {fileID: -1961694238319942420}
+  nodesToSave: []
+--- !u!114 &3518379206215934501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 149.99998, y: -47.28998}
+  guid: 232b45c3861bc27c2a198935843cf07e
+  _Children:
+  - {fileID: -1961694238319942420}
+  LastStatus: 0

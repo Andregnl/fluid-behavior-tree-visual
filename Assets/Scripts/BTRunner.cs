@@ -9,6 +9,11 @@ public class BTRunner : MonoBehaviour
 
     private bool hasPrintedWarning = false;
 
+    void Awake()
+    {
+        tree.SetOwner(gameObject);
+    }
+
     void Update()
     {
         if (tree.Root == null)
