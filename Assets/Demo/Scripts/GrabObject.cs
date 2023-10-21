@@ -6,17 +6,18 @@ using CleverCrow.Fluid.BTs.Tasks;
 
 public class GrabObject : ActionBase
 {
-    [SerializeField] Transform targetObject;
     Player player;
+    GameObject targetObject = null;
 
     protected override void OnInit()
     {
         player = Owner.GetComponent<Player>();
+        targetObject = GameObject.FindWithTag("Object");
     }
 
     protected override TaskStatus OnUpdate()
     {
-        targetObject.parent = Owner.transform;
+        targetObject.transform.parent = Owner.transform;
         player.hasGrabbedObj = true;
         return TaskStatus.Success;
     }

@@ -5,13 +5,15 @@ using CleverCrow.Fluid.BTs.Tasks;
 
 public class IsNearObject : ConditionBase
 {
-    [SerializeField] private GameObject targetObject;
     [SerializeField] float eps = 0.01f;
+    GameObject targetObject = null;
     Player player;
 
     protected override void OnInit()
     {
         player = Owner.GetComponent<Player>();
+        Debug.Log("NOME: " + player.gameObject.name);
+        targetObject = GameObject.FindWithTag("Object");
     }
 
     protected override bool OnUpdate()

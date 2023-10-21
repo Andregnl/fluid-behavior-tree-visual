@@ -4,16 +4,16 @@ using UnityEngine;
 using CleverCrow.Fluid.BTs.Tasks.Actions;
 using CleverCrow.Fluid.BTs.Tasks;
 
-public class MoveRobotTowards : ActionBase
+public class MoveTowardsDropoff : ActionBase
 {
     [SerializeField] float speed = 10.0f;
     protected GameObject objectToFollow = null;
 
     protected override void OnInit()
     {
-        objectToFollow = GameObject.FindWithTag("Object");
+        objectToFollow = GameObject.FindWithTag("Dropoff");
     }
-    
+
     protected override TaskStatus OnUpdate()
     {
         if (objectToFollow == null) return TaskStatus.Failure;

@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 912007161}
   m_Layer: 0
   m_Name: Dropoff
-  m_TagString: Untagged
+  m_TagString: Dropoff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1008846867}
   - component: {fileID: 1008846866}
   - component: {fileID: 1008846865}
+  - component: {fileID: 1008846868}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -332,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be81bf12dfc3c12b9bbe40b9b0d1dcf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 527e165bb1f3204b2bad1d9dab2b1a0f, type: 2}
+  tree: {fileID: 11400000, guid: 9b4e961cb0deb0e398a2a32cb2df77bf, type: 2}
 --- !u!212 &1008846866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -401,6 +402,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1008846868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008846864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d011333ff2b3136068d7594736a205b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasGrabbedObj: 0
 --- !u!1 &1759850647
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +501,7 @@ Transform:
   m_GameObject: {fileID: 1759850647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0.83, y: 3.49, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -590,7 +604,7 @@ GameObject:
   - component: {fileID: 1957806349}
   m_Layer: 0
   m_Name: Object
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -635,7 +649,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
