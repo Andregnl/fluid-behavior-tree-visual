@@ -68,6 +68,11 @@ namespace CleverCrow.Fluid.BTs.Tasks {
             Exit();
         }
 
+        public void ResetInit()
+        {
+            _init = false;
+        }
+
         protected virtual TaskStatus GetUpdate () {
             return TaskStatus.Failure;
         }

@@ -12,6 +12,7 @@ public class BTRunner : MonoBehaviour
     void Awake()
     {
         tree.SetOwner(gameObject);
+        tree.ResetInits();
     }
 
     void Update()

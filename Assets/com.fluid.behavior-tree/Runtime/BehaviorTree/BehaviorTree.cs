@@ -156,6 +156,18 @@ namespace CleverCrow.Fluid.BTs.Trees {
             TickCount++;
         }
 
+        public void ResetInits()
+        {
+            foreach (var n in allNodes)
+            {
+                if (n is TaskBase)
+                {
+                    TaskBase nn = (TaskBase) n;
+                    nn.ResetInit();
+                }
+            }
+        }
+
         public void AddNode (ITaskParent parent, ITask child) {
             parent.AddChild(child);
             child.ParentTree = this;
