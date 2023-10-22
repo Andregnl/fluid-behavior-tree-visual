@@ -149,10 +149,4 @@ public class VisualFluidBTView : GraphView
         Debug.Log("Saved Tree");
         tree.SaveTree();
     }
-
-    [UnityEditor.Callbacks.DidReloadScripts]
-    private static void OnReloadScripts()
-    {
-        Debug.Log("Scripts foram recompilados...");
-    }
 }
