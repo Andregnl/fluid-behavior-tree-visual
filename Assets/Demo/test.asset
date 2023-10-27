@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fb286ffcf94e088a94f160119e5d52, type: 3}
   m_Name: TaskRoot
   m_EditorClassIdentifier: 
-  position: {x: 187, y: -95}
+  position: {x: 187.20004, y: -109.28999}
   guid: e949a1587453b8978b04efba560a61c4
   _Children:
   - {fileID: 3732560223750701172}
@@ -35,6 +35,23 @@ MonoBehaviour:
   - {fileID: -3130020933617527376}
   - {fileID: 5471958224238450172}
   LastStatus: 0
+--- !u!114 &-5621408901272424919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c284d3cab8841379f4a02abee439d6f, type: 3}
+  m_Name: WaitTime
+  m_EditorClassIdentifier: 
+  position: {x: -362.40002, y: 180}
+  guid: ee716edade3ae734cad44a3910393d14
+  _Children: []
+  LastStatus: 2
+  time: 0.1
 --- !u!114 &-4535677219389414565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,8 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Root: {fileID: -8842261581423153642}
   _tasks:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -5621408901272424919}
   allNodes:
   - {fileID: -8842261581423153642}
   - {fileID: -7206660758107281538}
@@ -98,6 +114,7 @@ MonoBehaviour:
   - {fileID: -4535677219389414565}
   - {fileID: 7237713748083539578}
   - {fileID: -3130020933617527376}
+  - {fileID: -5621408901272424919}
   nodesToSave: []
 --- !u!114 &1123367422327809635
 MonoBehaviour:
@@ -111,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43f5c7aae73462dad5ea76f4ec82937, type: 3}
   m_Name: Selector
   m_EditorClassIdentifier: 
-  position: {x: 187.00005, y: 179.56532}
+  position: {x: 187.20004, y: 179.99998}
   guid: 5b48b2a147f5c813bb057efb6e0f25ae
   _Children:
   - {fileID: 3727743350693720538}
@@ -163,9 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
   m_Name: Sequence
   m_EditorClassIdentifier: 
-  position: {x: 187, y: 1}
+  position: {x: 187.20004, y: 15.349024}
   guid: 10b531544d404e05f9f72cb444d11b75
   _Children:
+  - {fileID: -5621408901272424919}
   - {fileID: -7206660758107281538}
   - {fileID: 1123367422327809635}
   - {fileID: 5490099690239241153}
