@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be81bf12dfc3c12b9bbe40b9b0d1dcf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 9b4e961cb0deb0e398a2a32cb2df77bf, type: 2}
+  tree: {fileID: 11400000, guid: 37d8adb6ff34fa6118c6a136c9084d91, type: 2}
 --- !u!212 &1008846866
 SpriteRenderer:
   m_ObjectHideFlags: 0

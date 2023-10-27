@@ -16,7 +16,7 @@ MonoBehaviour:
   guid: e949a1587453b8978b04efba560a61c4
   _Children:
   - {fileID: 3732560223750701172}
-  LastStatus: 0
+  LastStatus: 2
 --- !u!114 &-7206660758107281538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   guid: ad228ae5d7ebef117a3e80bba36188b5
   _Children:
   - {fileID: 7556490403239859745}
-  LastStatus: 1
+  LastStatus: 0
 --- !u!114 &-3130020933617527376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   position: {x: -212.00003, y: 347}
   guid: 1ab7c0a3abcbe5b37ab1180b7c891213
   _Children: []
-  LastStatus: 0
+  LastStatus: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +81,9 @@ MonoBehaviour:
   m_Name: test
   m_EditorClassIdentifier: 
   _Root: {fileID: -8842261581423153642}
-  _tasks: []
+  _tasks:
+  - {fileID: 0}
+  - {fileID: 0}
   allNodes:
   - {fileID: -8842261581423153642}
   - {fileID: -7206660758107281538}
@@ -161,13 +163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
   m_Name: Sequence
   m_EditorClassIdentifier: 
-  position: {x: 186.99998, y: -0.37388706}
+  position: {x: 187, y: 1}
   guid: 10b531544d404e05f9f72cb444d11b75
   _Children:
   - {fileID: -7206660758107281538}
   - {fileID: 1123367422327809635}
   - {fileID: 5490099690239241153}
-  LastStatus: 0
+  LastStatus: 2
 --- !u!114 &5471958224238450172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,11 +217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e49939d047f1b09dbec6b0688acfd50, type: 3}
   m_Name: MoveTowardsDropoff
   m_EditorClassIdentifier: 
-  position: {x: 760.00006, y: 303.5653}
+  position: {x: 760, y: 304}
   guid: 8e7e682ff8f1c373fa118a98efb3d0a3
   _Children: []
   LastStatus: 0
-  speed: 10
+  speed: 40
 --- !u!114 &7556490403239859745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +237,7 @@ MonoBehaviour:
   position: {x: 535.00006, y: 409.5653}
   guid: d92b016b21234e5c18e1edc5fd3b488c
   _Children: []
-  LastStatus: 0
+  LastStatus: 1
 --- !u!114 &7699295204051314779
 MonoBehaviour:
   m_ObjectHideFlags: 0

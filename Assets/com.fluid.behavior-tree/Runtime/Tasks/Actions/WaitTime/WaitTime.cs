@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace CleverCrow.Fluid.BTs.Tasks.Actions {
     /// <summary>
     /// Return continue until the time has passed
@@ -14,12 +16,18 @@ namespace CleverCrow.Fluid.BTs.Tasks.Actions {
             _timeMonitor = timeMonitor;
         }
 
+        protected override void OnInit()
+        {
+            _timeMonitor = new TimeMonitor();
+        }
+
         protected override void OnStart () {
             _timePassed = 0;
         }
 
         protected override TaskStatus OnUpdate () {
             _timePassed += _timeMonitor.DeltaTime;
+            // _timePassed += Time.deltaTime;
             
             if (_timePassed < time) {
                 return TaskStatus.Continue;                
