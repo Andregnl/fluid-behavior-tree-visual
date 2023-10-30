@@ -25,8 +25,28 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
         CreateInputPorts();
         CreateOutputPorts();
+        CreatStyles();
     }
 
+    void CreatStyles()
+    {
+        if (node is TaskRoot)
+        {
+            AddToClassList("root");
+        }
+        else if (node is TaskBase)
+        {
+            AddToClassList("task");
+        }
+        else if (node is DecoratorBase)
+        {
+            AddToClassList("decorator");
+        }
+        else if (node is TaskParentBase)
+        {
+            AddToClassList("taskparent");
+        }  
+    }
     void CreateInputPorts()
     {
         if (node is TaskRoot) return;
