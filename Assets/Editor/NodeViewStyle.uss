@@ -5,10 +5,14 @@
 
 #input {
     align-items: center;
-    right: -3px;
+    right: auto;
     min-height: 20px;
     background-color: rgba(112, 255, 0, 0);
     -unity-slice-top: 0;
+    -unity-slice-scale: 28.9px;
+    flex-direction: column;
+    background-image: url('project://database/Assets/teste.png?fileID=2800000&guid=edc2d04de7301ad4ea36d581afb536e5&type=3#teste');
+    -unity-background-image-tint-color: rgb(115, 115, 115);
 }
 
 #output {
@@ -91,4 +95,29 @@
 #divider {
     min-height: 1px;
     background-color: rgb(5, 0, 0);
+}
+
+.decorator #input {
+    background-image: url('project://database/Assets/teste.png?fileID=2800000&guid=edc2d04de7301ad4ea36d581afb536e5&type=3#teste');
+    border-left-color: rgba(255, 0, 0, 0);
+    border-right-color: rgba(255, 0, 0, 0);
+    border-top-color: rgba(255, 0, 0, 0);
+    border-bottom-color: rgba(255, 0, 0, 0);
+    -unity-background-image-tint-color: rgb(28, 255, 0);
+    background-color: rgba(57, 255, 0, 0);
+}
+
+.task #input {
+    background-image: url('project://database/Assets/teste.png?fileID=2800000&guid=edc2d04de7301ad4ea36d581afb536e5&type=3#teste');
+    -unity-background-image-tint-color: rgb(255, 0, 0);
+}
+
+.taskparent #input {
+    background-image: url('project://database/Assets/teste.png?fileID=2800000&guid=edc2d04de7301ad4ea36d581afb536e5&type=3#teste');
+    -unity-background-image-tint-color: rgb(0, 214, 255);
+}
+
+.root #input {
+    background-image: url('project://database/Assets/teste.png?fileID=2800000&guid=edc2d04de7301ad4ea36d581afb536e5&type=3#teste');
+    -unity-background-image-tint-color: rgb(237, 255, 0);
 }
