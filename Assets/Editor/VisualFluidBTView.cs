@@ -14,7 +14,6 @@ using CleverCrow.Fluid.BTs.TaskParents;
 using CleverCrow.Fluid.BTs.TaskParents.Composites;
 using CleverCrow.Fluid.BTs.Decorators;
 
-
 public class VisualFluidBTView : GraphView
 {
     public new class UxmlFactory : UxmlFactory<VisualFluidBTView, GraphView.UxmlTraits> {}

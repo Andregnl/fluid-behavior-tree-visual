@@ -1,18 +1,71 @@
 # Visual BT
+#### This section contains information about Visual BT, the project being developed as the code assignment of MAC0332 - Software Engineering
 
-Visual implementation of behavior trees for Unity projects. This is an increment of [fluid BT](https://github.com/ashblue/Visual-behavior-tree), with the added programmable GUI and some new nodes.
+Visual BT is a visual implementation of behavior trees for Unity projects. This is an increment of [fluid BT](https://github.com/ashblue/Visual-behavior-tree), with the added programmable GUI and some new nodes.
+
+**Completed features**
+- Intuitive and programmable graphical interface, in the "drag-and-drop" style
+- Node argument editor, which allows access to exposed parameters of the tree node classes
+- Modified SelectorRandom node, making it actually random every time
 
 **Expected new features**
+- Real-time tree execution visualizer, for debbuging
+- New Interrupt node
+- Shared variables declaration, creating a "global" memory for the tree
 
-* Intuitive and programmable graphical interface, in the "drag-and-drop" style
-* Node arguments editor, allowing access to exposed parameters of the tree node classes
-* Real-time tree execution visualizer, for debbuging
-* New Interrupt node
-* Modified SelectorRandom node, making it actually random every time
-* Shared variables declaration, creating a "global" memory for the tree
+### Progress tracking
 
-## Kanban de tarefas
-[Acessível no Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas)
+Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas).
+
+### How to create a tree in the Graphical Interface
+- Add the component `BTRunner` to the object you want to control
+- Create a new `BehaviorTree` at your current directory by right-clicking and then selecting `Create > ScriptableObjects > BehaviorTree`
+- Drag and drop the new asset into the _Tree_ proprerty of `BTRunner`
+- Open the tree editor by clicking on `Windows` in the top bar and then `VisualFLuidBT`
+- Select the tree Scriptable Object by double-clicking it, either on the filesystem or on the runner
+- Add a root to your tree by right-clicking on the _Tree View_, then selecting `RootNode`
+- Create the tree you want by selecting the nodes on the right-click menu, editing their properties in the left _Inspector_ and then connecting them by creating edges
+- When you are done hit the `Save` button below the _Inspector_ View
+- Run the scene to check your behavior
+
+### Screenshots
+![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/34aa6dbb-65c5-4e2a-9a06-d13c865497d2)
+
+The first image demonstrates how to open the VisualFluidBT window
+
+![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/112e2153-cde3-43ee-b8e9-837db90b515c)
+
+This image shows the path to create a new Behavior Tree asset
+
+![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/ed2bcc38-1bcd-4ab5-a4e4-1914442cb378)
+
+In the image above, we can see an example of a tree being edited
+
+### Implementation of the Graphical Interface
+The first step in creating the new Visual and programmable interface for FluidBT was
+transforming all of its major components into _Scriptable Objects_. This was necessary
+because we want the user to be able to edit the tree inside the Editor and then save all
+the information in an asset, so that it can be loaded and reused at any point.
+
+Then, we chose to use _UI Builder_ to create the new Editor window, where the tree editor 
+and inspector view would be implemented. This tool is part of the UI Toolkit, which is a core feature of Unity game engine since the 2021.1 version.
+
+Furthermore, we have elected to use the experimental API called _GraphView_ to represent
+the visual elements of the tree structure. The tree itself is a subclass of the graph view and all of its nodes, called _Node Views_, are subtypes of the corresponding class in the API.
+
+In addition, we created the _Inspector_ View panel, which allows
+the user to see and edit the public properties of a node, just like in the main
+Inspector of the Editor. Every time the user clicks on a different node in the
+_Tree View_, the _Inspector_ must quickly switch to show the new node's properties.
+
+Finally, we started altering the style sheets of the node views to give them a
+customized apperance and make them more distintic. This was done by editing the 
+_UXML_ files on the UI Builder tool.
+
+---
+
+# Fluid BT
+The following section contains information about the original implementation of Fluid BT, with some alterations.
 
 ## Code driven use
 
