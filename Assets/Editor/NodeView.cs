@@ -25,6 +25,17 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
         CreateInputPorts();
         CreateOutputPorts();
+
+        if (node.HasBeenActive)
+        {
+            Debug.Log("Ativei nó:" + node.Name);
+            // mudar cor
+        }
+        else
+        {
+            Debug.Log("Desativei nó:" + node.Name);
+            // cor original
+        }
     }
 
     void CreateInputPorts()
