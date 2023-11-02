@@ -8,6 +8,8 @@ using CleverCrow.Fluid.BTs.Tasks;
 [InitializeOnLoadAttribute]
 public class VisualFluidBT : EditorWindow
 {
+    private static VisualFluidBTView staticVisualBT;
+
     [SerializeField]
     private VisualTreeAsset m_VisualTreeAsset = default;
 
@@ -39,6 +41,8 @@ public class VisualFluidBT : EditorWindow
 
         visualFuildBTView = root.Q<VisualFluidBTView>();
         inspectorView =  root.Q<InspectorView>();
+
+        staticVisualBT = visualFuildBTView;
 
         OnSelectionChange();
         visualFuildBTView.OnNodeSelected = OnNodeSelectionChanged;
@@ -75,5 +79,17 @@ public class VisualFluidBT : EditorWindow
 
     void OnNodeSelectionChanged(NodeView node){
         inspectorView.UpdateSelection(node);
+    }
+
+    [UnityEditor.Callbacks.DidReloadScripts]
+    private static void OnReloadScripts()
+    {
+        BehaviorTree tree = Selection.activeObject as BehaviorTree;
+
+        if (tree && staticVisualBT != null)
+        {
+            staticVisualBT.PopulateView(tree);
+        }
+        Debug.Log("Scripts foram recompilados...");
     }
 }
