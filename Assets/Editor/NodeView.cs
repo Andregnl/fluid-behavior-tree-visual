@@ -25,7 +25,20 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
         CreateInputPorts();
         CreateOutputPorts();
-        CreatStyles();
+
+        if (node.HasBeenActive)
+        {
+            Debug.Log("Ativei nó:" + node.Name);
+            AddToClassList("decorator");
+            // mudar cor
+        }
+        else
+        {
+            RemoveFromClassList("decorator");
+            CreatStyles();
+            Debug.Log("Desativei nó:" + node.Name);
+            // cor original
+        }
     }
 
     void CreatStyles()

@@ -15,6 +15,7 @@ public class VisualFluidBT : EditorWindow
 
     VisualFluidBTView visualFuildBTView;
     InspectorView inspectorView;
+    BehaviorTree tree;
 
     [MenuItem("Window/VisualFluidBT")]
     public static void OpenWindow()
@@ -27,6 +28,13 @@ public class VisualFluidBT : EditorWindow
     {
         visualFuildBTView.SaveTree();
     }
+
+//     void OnGUI()
+//     {
+// //        if (!Application.isPlaying) return;
+
+//         visualFuildBTView.PopulateView(tree);
+//     }
 
     public void CreateGUI()
     {
@@ -69,7 +77,7 @@ public class VisualFluidBT : EditorWindow
 
     private void OnSelectionChange()
     {
-        BehaviorTree tree = Selection.activeObject as BehaviorTree;
+        tree = Selection.activeObject as BehaviorTree;
 
         if (tree)
         {
