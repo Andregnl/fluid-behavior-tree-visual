@@ -25,22 +25,39 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
         CreateInputPorts();
         CreateOutputPorts();
-
         if (node.HasBeenActive)
         {
             Debug.Log("Ativei nó:" + node.Name);
-            AddToClassList("decorator");
-            // mudar cor
+            selected = true;
         }
         else
         {
-            RemoveFromClassList("decorator");
+            selected = false;
             CreatStyles();
             Debug.Log("Desativei nó:" + node.Name);
             // cor original
         }
     }
 
+    void RemoveStyles()
+    {
+        if (node is TaskRoot)
+        {
+            RemoveFromClassList("root");
+        }
+        else if (node is TaskBase)
+        {
+            RemoveFromClassList("task");
+        }
+        else if (node is DecoratorBase)
+        {
+            RemoveFromClassList("decorator");
+        }
+        else if (node is TaskParentBase)
+        {
+            RemoveFromClassList("taskparent");
+        }
+    }
     void CreatStyles()
     {
         if (node is TaskRoot)

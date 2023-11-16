@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System;
+using System.Collections.Generic;
 
 namespace CleverCrow.Fluid.BTs.Tasks {
     public abstract class GenericTaskBase : ITask{
@@ -27,9 +30,15 @@ namespace CleverCrow.Fluid.BTs.Tasks {
             return TaskStatus.Success;
         }
 
+        public void ResetHasBeenActive()
+        {
+            Debug.Log("Disetei o HasBeenActive");
+            NeedsToResetHasBeenActive = true;
+        }
+
         public override void ResetTask()
         {
-            HasBeenActive = false;
+
         }
     }
 }

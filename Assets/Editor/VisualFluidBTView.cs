@@ -84,7 +84,18 @@ public class VisualFluidBTView : GraphView
         DeleteElements(graphElements);
         graphViewChanged += OnGraphViewChanged;
 
-        tree.allNodes.ForEach(n => CreateNodeView(n));
+        tree.allNodes.ForEach(n => {
+            if (n.NeedsToResetHasBeenActive)
+                n.time += Time.deltaTime;
+
+            if (n.time > 0.1f)
+            {
+                n.time = 0.0f;
+                n.NeedsToResetHasBeenActive = false;
+                n.HasBeenActive = false;
+            }
+            CreateNodeView(n);
+        });
 
         tree.allNodes.ForEach(n => {
             var children = tree.GetChildren(n);

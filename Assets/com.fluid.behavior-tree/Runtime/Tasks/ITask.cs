@@ -46,6 +46,8 @@ namespace CleverCrow.Fluid.BTs.Tasks {
         public virtual EditorRuntimeUtilities EditorUtils { get; }
         public virtual float IconPadding { get; }
         public virtual bool HasBeenActive { get; set; }
+        public virtual bool NeedsToResetHasBeenActive { get; set; }
+        public virtual float time { get; set; }
 
         /// <summary>
         /// Triggered every tick

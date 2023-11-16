@@ -50,6 +50,7 @@ namespace CleverCrow.Fluid.BTs.Tasks {
 
             if (_lastTickCount != ParentTree.TickCount) {
                 ResetTask();
+                ResetHasBeenActive();
             }
 
             _lastTickCount = ParentTree.TickCount;
@@ -102,6 +103,7 @@ namespace CleverCrow.Fluid.BTs.Tasks {
                 OnExit();
             }
             ResetTask();
+            ResetHasBeenActive();
         }
 
         /// <summary>

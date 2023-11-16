@@ -29,12 +29,38 @@ public class VisualFluidBT : EditorWindow
         visualFuildBTView.SaveTree();
     }
 
-//     void OnGUI()
-//     {
-// //        if (!Application.isPlaying) return;
+    // void OnGUI()
+    // {
+    //     Debug.Log("ARVORE: " + tree.name);
+    //     if (Application.isPlaying) return;
 
-//         visualFuildBTView.PopulateView(tree);
-//     }
+    //     // Each editor window contains a root VisualElement object
+    //     VisualElement root = rootVisualElement;
+
+    //     // Instantiate UXML
+    //     VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
+    //     //root.Add(labelFromUXML);
+
+    //     visualFuildBTView = root.Q<VisualFluidBTView>();
+    //     inspectorView =  root.Q<InspectorView>();
+
+    //     // staticVisualBT = visualFuildBTView;
+    //     tree = Selection.activeObject as BehaviorTree;
+
+    //     if (tree)
+    //     {
+    //         visualFuildBTView.PopulateView(tree);
+    //     }
+    //     //root.Remove(labelFromUXML);
+    // }
+
+    private void Update()
+    {
+        if (Application.isPlaying)
+        {
+            OnReloadScripts();
+        }
+    }
 
     public void CreateGUI()
     {

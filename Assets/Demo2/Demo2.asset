@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3045166662968180664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fb286ffcf94e088a94f160119e5d52, type: 3}
+  m_Name: TaskRoot
+  m_EditorClassIdentifier: 
+  position: {x: 162, y: 45.355255}
+  guid: d4ad6723e01d05e1ba2d2593c6aa9ddc
+  _Children:
+  - {fileID: 7630284456052353894}
+  LastStatus: 0
+--- !u!114 &-1906419199706719811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7a331a0edc73c70ac909b87d152ed6, type: 3}
+  m_Name: MoveTowardsObjWithTag
+  m_EditorClassIdentifier: 
+  position: {x: 794.41406, y: 344}
+  guid: 4e9239c830a43fd44891419c7b69cbb8
+  _Children: []
+  LastStatus: 0
+  speed: 3
+  tagToFollow: Dropoff
+  eps: 0.1
+--- !u!114 &-1295296486499979196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b616a39e97cfdca9a951f96c6e68147, type: 3}
+  m_Name: IsNearObject
+  m_EditorClassIdentifier: 
+  position: {x: 268.08948, y: 344}
+  guid: 1fc01ed0ebc961ae3ac5d885992d543e
+  _Children: []
+  LastStatus: 0
+  eps: 0.01
+--- !u!114 &-921318034130877731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 66.46582, y: 251.73682}
+  guid: e1eaf0a7ed5482186bbee7d2c9604403
+  _Children:
+  - {fileID: 7785043397005056621}
+  LastStatus: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e09d50cf948054d824c8ceee70cac6, type: 3}
+  m_Name: Demo2
+  m_EditorClassIdentifier: 
+  _Root: {fileID: -3045166662968180664}
+  _tasks: []
+  allNodes:
+  - {fileID: -3045166662968180664}
+  - {fileID: 7785043397005056621}
+  - {fileID: -921318034130877731}
+  - {fileID: 7630284456052353894}
+  - {fileID: 6731996127882254839}
+  - {fileID: -1295296486499979196}
+  - {fileID: 2080610167670280549}
+  - {fileID: 4427946266930706564}
+  - {fileID: 2364826679553066308}
+  - {fileID: -1906419199706719811}
+  nodesToSave: []
+--- !u!114 &2080610167670280549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99fd843b3e78a060b90ee88528dab1c, type: 3}
+  m_Name: GrabObject
+  m_EditorClassIdentifier: 
+  position: {x: 436.83716, y: 344}
+  guid: 8114b360d0c21251e94c4f8a10bbdd99
+  _Children: []
+  LastStatus: 0
+--- !u!114 &2364826679553066308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfaf483cb9fcf37c7a57705243fafb22, type: 3}
+  m_Name: HasGrabbedObject
+  m_EditorClassIdentifier: 
+  position: {x: 628, y: 344}
+  guid: b74cc4ab76eefea1996c85df9ee61a88
+  _Children: []
+  LastStatus: 0
+--- !u!114 &4427946266930706564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 688.3605, y: 252}
+  guid: 2f7d5dd583489faa98f023bece8eb65b
+  _Children:
+  - {fileID: 2364826679553066308}
+  - {fileID: -1906419199706719811}
+  LastStatus: 0
+--- !u!114 &6731996127882254839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 303.18945, y: 252}
+  guid: 59af9667fadcda0ecbed42bfdea15192
+  _Children:
+  - {fileID: -1295296486499979196}
+  - {fileID: 2080610167670280549}
+  LastStatus: 0
+--- !u!114 &7630284456052353894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: 162, y: 144.15262}
+  guid: 58e8a706bb2e65d4288e17ab62a0530e
+  _Children:
+  - {fileID: -921318034130877731}
+  - {fileID: 6731996127882254839}
+  - {fileID: 4427946266930706564}
+  LastStatus: 0
+--- !u!114 &7785043397005056621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7a331a0edc73c70ac909b87d152ed6, type: 3}
+  m_Name: MoveTowardsObjWithTag
+  m_EditorClassIdentifier: 
+  position: {x: 49.46582, y: 343.73682}
+  guid: cdf6592095d3a10fbba603071df406ac
+  _Children: []
+  LastStatus: 0
+  speed: 3
+  tagToFollow: Object
+  eps: 0.1
