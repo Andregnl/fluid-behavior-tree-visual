@@ -18,15 +18,15 @@ Visual BT is a visual implementation of behavior trees for Unity projects. This 
 Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas).
 
 ### How to create a tree in the Graphical Interface
-- Add the component `BTRunner` to the object you want to control
-- Create a new `BehaviorTree` at your current directory by right-clicking and then selecting `Create > ScriptableObjects > BehaviorTree`
-- Drag and drop the new asset into the _Tree_ proprerty of `BTRunner`
-- Open the tree editor by clicking on `Windows` in the top bar and then `VisualFLuidBT`
-- Select the tree Scriptable Object by double-clicking it, either on the filesystem or on the runner
-- Add a root to your tree by right-clicking on the _Tree View_, then selecting `RootNode`
-- Create the tree you want by selecting the nodes on the right-click menu, editing their properties in the left _Inspector_ and then connecting them by creating edges
-- When you are done hit the `Save` button below the _Inspector_ View
-- Run the scene to check your behavior
+1. Add the component `BTRunner` to the object you want to control
+2. Create a new `BehaviorTree` at your current directory by right-clicking and then selecting `Create > ScriptableObjects > BehaviorTree`
+3. Drag and drop the new asset into the _Tree_ proprerty of `BTRunner`
+4. Open the tree editor by clicking on `Windows` in the top bar and then `VisualFLuidBT`
+5. Select the tree Scriptable Object by double-clicking it, either on the filesystem or on the runner
+6. Add a root to your tree by right-clicking on the _Tree View_, then selecting `RootNode`
+7. Create the tree you want by selecting the nodes on the right-click menu, editing their properties in the left _Inspector_ and then connecting them by creating edges
+8. When you are done hit the `Save` button below the _Inspector_ View
+9. Run the scene to check your behavior
 
 ### Screenshots
 ![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/34aa6dbb-65c5-4e2a-9a06-d13c865497d2)
