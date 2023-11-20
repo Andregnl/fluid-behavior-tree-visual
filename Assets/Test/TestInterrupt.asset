@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6814969237220957327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add5f4ae7a5a0f34eb6a1f8c8d635c3d, type: 3}
+  m_Name: Interrupt
+  m_EditorClassIdentifier: 
+  position: {x: -150, y: 206.99998}
+  guid: b173881c4dc178e4db2c670f1fbf9ec3
+  _Children:
+  - {fileID: -5154800960846647715}
+  LastStatus: 1
+  tree: {fileID: 11400000}
+--- !u!114 &-5154800960846647715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65839dd3e71d9955cab17e0d05863a0a, type: 3}
+  m_Name: RepeatForever
+  m_EditorClassIdentifier: 
+  position: {x: -150.00003, y: 318.9579}
+  guid: 7a3a061aa8cc8d845beb5fe75530a1d8
+  _Children:
+  - {fileID: -383461626809624670}
+  LastStatus: 2
+--- !u!114 &-4049374681392974928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f7e7cff54b5dab282922ff20297669, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  position: {x: 149.99998, y: 331.85492}
+  guid: a120e7b1ee0902c40b7ba4fc4f39d7d4
+  _Children: []
+  LastStatus: 0
+  message: Nao interrompido!
+--- !u!114 &-1953715682505849960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
+  m_Name: Sequence
+  m_EditorClassIdentifier: 
+  position: {x: -0.000048160553, y: 115.35001}
+  guid: 92cfbd9400a6e8e479e339cdc0696fcd
+  _Children:
+  - {fileID: -6814969237220957327}
+  - {fileID: 8005005429374806100}
+  LastStatus: 1
+--- !u!114 &-383461626809624670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f7e7cff54b5dab282922ff20297669, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  position: {x: -149.99986, y: 431}
+  guid: daa40226c8f9d4644b0570ad07a8fb2a
+  _Children: []
+  LastStatus: 0
+  message: Interrompido!
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02e09d50cf948054d824c8ceee70cac6, type: 3}
+  m_Name: TestInterrupt
+  m_EditorClassIdentifier: 
+  _Root: {fileID: 2412813033373235246}
+  _tasks: []
+  allNodes:
+  - {fileID: 2412813033373235246}
+  - {fileID: -1953715682505849960}
+  - {fileID: -5154800960846647715}
+  - {fileID: -383461626809624670}
+  - {fileID: 8005005429374806100}
+  - {fileID: -4049374681392974928}
+  - {fileID: -6814969237220957327}
+  nodesToSave: []
+--- !u!114 &2412813033373235246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fb286ffcf94e088a94f160119e5d52, type: 3}
+  m_Name: TaskRoot
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0}
+  guid: 4cc928c318a17764aafe88e9c370fd16
+  _Children:
+  - {fileID: -1953715682505849960}
+  LastStatus: 1
+--- !u!114 &8005005429374806100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65839dd3e71d9955cab17e0d05863a0a, type: 3}
+  m_Name: RepeatForever
+  m_EditorClassIdentifier: 
+  position: {x: 149.99998, y: 206.99998}
+  guid: cc154adb791984f4f8fd01ae89680a60
+  _Children:
+  - {fileID: -4049374681392974928}
+  LastStatus: 2

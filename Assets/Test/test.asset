@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f7e7cff54b5dab282922ff20297669, type: 3}
   m_Name: DebugLogNode
   m_EditorClassIdentifier: 
-  position: {x: 13.000037, y: 348.5209}
+  position: {x: 13.000054, y: 346.35504}
   guid: f3018c82cfe446548aad3d25c66e4717
   _Children: []
   LastStatus: 0
@@ -29,12 +29,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add5f4ae7a5a0f34eb6a1f8c8d635c3d, type: 3}
   m_Name: Interrupt
   m_EditorClassIdentifier: 
-  position: {x: 13.000037, y: 125.00001}
+  position: {x: 13, y: 125}
   guid: 4d5007ecdcacdd242a379622aac89378
   _Children:
   - {fileID: -5249670991067331287}
   LastStatus: 0
-  condition: 1
   tree: {fileID: 11400000}
 --- !u!114 &-5249670991067331287
 MonoBehaviour:

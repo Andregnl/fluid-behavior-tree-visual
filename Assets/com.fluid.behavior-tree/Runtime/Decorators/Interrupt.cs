@@ -8,7 +8,7 @@ namespace CleverCrow.Fluid.BTs.Decorators
 {
     public class Interrupt : DecoratorBase
     {
-        public bool condition = true;
+        private bool condition = false;
 
         private IEnumerator conditionChecker;
         private CoroutineHandler coroutineHandler;
@@ -24,11 +24,12 @@ namespace CleverCrow.Fluid.BTs.Decorators
 
         protected override TaskStatus OnUpdate()
         {
-
-            Debug.Log("Entrei no Interrupt");
+            condition = true;
+            Debug.Log(condition);
 
             if (condition)
             {
+                // Debug.Log("Nao posso imprimir isso!");
                 var childStatus = Child.Update();
                 return childStatus;
             }
