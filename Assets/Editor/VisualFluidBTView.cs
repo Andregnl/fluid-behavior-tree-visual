@@ -76,6 +76,35 @@ public class VisualFluidBTView : GraphView
         return GetNodeByGuid(node.guid) as NodeView;
     }
 
+    public void ResetTree(BehaviorTree tree)
+    {
+        graphViewChanged -= OnGraphViewChanged;
+        DeleteElements(graphElements);
+        graphViewChanged += OnGraphViewChanged;
+
+        tree.allNodes.ForEach(n => {
+            n.time = 0.0f;
+            n.NeedsToResetHasBeenActive = false;
+            n.HasBeenActive = false;
+            CreateNodeView(n);
+        });
+
+        tree.allNodes.ForEach(n => {
+            var children = tree.GetChildren(n);
+
+            if (children != null)
+            {
+                children.ForEach(c => {
+                    NodeView parentView = FindNodeView(n);
+                    NodeView childView = FindNodeView(c);
+
+                    Edge edge = parentView.outputPort.ConnectTo(childView.inputPort);
+                    AddElement(edge);
+                });
+            }
+        });
+    }
+
     public void PopulateView(BehaviorTree tree)
     {
         this.tree = tree;
