@@ -26,13 +26,11 @@ namespace CleverCrow.Fluid.BTs.Tasks {
 #endif
             
             HasBeenActive = true;
-            Debug.Log("Setei o HasBeenActive");
             return TaskStatus.Success;
         }
 
         public void ResetHasBeenActive()
         {
-            Debug.Log("Disetei o HasBeenActive");
             NeedsToResetHasBeenActive = true;
         }
 

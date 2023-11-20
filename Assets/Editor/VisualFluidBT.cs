@@ -130,7 +130,6 @@ public class VisualFluidBT : EditorWindow
         {
             staticVisualBT.PopulateView(tree);
         }
-        Debug.Log("Scripts foram recompilados...");
     }
 
     private static void OnExitPlayMode()
@@ -141,6 +140,5 @@ public class VisualFluidBT : EditorWindow
         {
             staticVisualBT.ResetTree(tree);
         }
-        Debug.Log("Scripts foram recompilados...");
     }
 }

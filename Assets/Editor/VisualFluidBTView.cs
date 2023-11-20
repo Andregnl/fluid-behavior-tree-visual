@@ -78,6 +78,8 @@ public class VisualFluidBTView : GraphView
 
     public void ResetTree(BehaviorTree tree)
     {
+        tree.ResetActiveTasks();
+
         graphViewChanged -= OnGraphViewChanged;
         DeleteElements(graphElements);
         graphViewChanged += OnGraphViewChanged;
@@ -103,6 +105,7 @@ public class VisualFluidBTView : GraphView
                 });
             }
         });
+
     }
 
     public void PopulateView(BehaviorTree tree)
