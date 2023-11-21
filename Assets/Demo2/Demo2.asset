@@ -16,7 +16,7 @@ MonoBehaviour:
   guid: d4ad6723e01d05e1ba2d2593c6aa9ddc
   _Children:
   - {fileID: 7630284456052353894}
-  LastStatus: 0
+  LastStatus: 2
 --- !u!114 &-1906419199706719811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7a331a0edc73c70ac909b87d152ed6, type: 3}
   m_Name: MoveTowardsObjWithTag
   m_EditorClassIdentifier: 
-  position: {x: 794.41406, y: 344}
+  position: {x: 1014.2095, y: 330.0347}
   guid: 4e9239c830a43fd44891419c7b69cbb8
   _Children: []
   LastStatus: 0
@@ -95,6 +95,7 @@ MonoBehaviour:
   - {fileID: 4427946266930706564}
   - {fileID: 2364826679553066308}
   - {fileID: -1906419199706719811}
+  - {fileID: 4739455259494765042}
   nodesToSave: []
 --- !u!114 &2080610167670280549
 MonoBehaviour:
@@ -124,10 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfaf483cb9fcf37c7a57705243fafb22, type: 3}
   m_Name: HasGrabbedObject
   m_EditorClassIdentifier: 
-  position: {x: 628, y: 344}
+  position: {x: 847.80945, y: 330.0347}
   guid: b74cc4ab76eefea1996c85df9ee61a88
   _Children: []
-  LastStatus: 0
+  LastStatus: 1
 --- !u!114 &4427946266930706564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,12 +141,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887f54327b8d14ed5a7cd909fb8bb077, type: 3}
   m_Name: Sequence
   m_EditorClassIdentifier: 
-  position: {x: 688.3605, y: 252}
+  position: {x: 908.60944, y: 238.03468}
   guid: 2f7d5dd583489faa98f023bece8eb65b
   _Children:
   - {fileID: 2364826679553066308}
   - {fileID: -1906419199706719811}
-  LastStatus: 0
+  LastStatus: 1
+--- !u!114 &4739455259494765042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dee1e41d58b59543ab4f17c49095433, type: 3}
+  m_Name: PlaySoundAction
+  m_EditorClassIdentifier: 
+  position: {x: 614.4, y: 342.68198}
+  guid: 47c3842792a8fe84c936f0a01e9dfa59
+  _Children: []
+  LastStatus: 2
+  audioClip: {fileID: 8300000, guid: 233aa0f174aaa1e4c9d0402d3a551e6c, type: 3}
+  soundPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &6731996127882254839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +182,8 @@ MonoBehaviour:
   _Children:
   - {fileID: -1295296486499979196}
   - {fileID: 2080610167670280549}
-  LastStatus: 0
+  - {fileID: 4739455259494765042}
+  LastStatus: 2
 --- !u!114 &7630284456052353894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +202,7 @@ MonoBehaviour:
   - {fileID: -921318034130877731}
   - {fileID: 6731996127882254839}
   - {fileID: 4427946266930706564}
-  LastStatus: 0
+  LastStatus: 2
 --- !u!114 &7785043397005056621
 MonoBehaviour:
   m_ObjectHideFlags: 0
