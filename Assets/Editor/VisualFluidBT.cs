@@ -16,6 +16,7 @@ public class VisualFluidBT : EditorWindow
     VisualFluidBTView visualFuildBTView;
     InspectorView inspectorView;
     BehaviorTree tree;
+    bool treeIsReset = false;
 
     [MenuItem("Window/VisualFluidBT")]
     public static void OpenWindow()
@@ -59,6 +60,12 @@ public class VisualFluidBT : EditorWindow
         if (Application.isPlaying)
         {
             OnReloadScripts();
+            treeIsReset = false;
+        }
+        else if (!treeIsReset)
+        {
+            OnExitPlayMode();
+            treeIsReset = true;
         }
     }
 
@@ -90,7 +97,6 @@ public class VisualFluidBT : EditorWindow
         var buttons = root.Query<Button>();
         buttons.ForEach(RegisterHandler);
     }
-
     void RegisterHandler(Button button)
     {
         button.RegisterCallback<ClickEvent>(SaveTree);
@@ -124,6 +130,15 @@ public class VisualFluidBT : EditorWindow
         {
             staticVisualBT.PopulateView(tree);
         }
-        Debug.Log("Scripts foram recompilados...");
+    }
+
+    private static void OnExitPlayMode()
+    {
+        BehaviorTree tree = Selection.activeObject as BehaviorTree;
+
+        if (tree && staticVisualBT != null)
+        {
+            staticVisualBT.ResetTree(tree);
+        }
     }
 }

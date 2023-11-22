@@ -9,6 +9,7 @@ namespace CleverCrow.Fluid.BTs.Tasks.Actions.Editors.Tests {
                 var timeMonitor = Substitute.For<ITimeMonitor>();
                 timeMonitor.DeltaTime.Returns(0);
                 var waitTime = new WaitTime(timeMonitor) {time = 1};
+                waitTime.testMode = true;
 
                 Assert.AreEqual(TaskStatus.Continue, waitTime.Update());
             }
@@ -18,7 +19,8 @@ namespace CleverCrow.Fluid.BTs.Tasks.Actions.Editors.Tests {
                 var timeMonitor = Substitute.For<ITimeMonitor>();
                 timeMonitor.DeltaTime.Returns(2);
                 var waitTime = new WaitTime(timeMonitor) {time = 1};
-            
+                waitTime.testMode = true;
+
                 Assert.AreEqual(TaskStatus.Success, waitTime.Update());
             }
         }
@@ -28,6 +30,7 @@ namespace CleverCrow.Fluid.BTs.Tasks.Actions.Editors.Tests {
             public void It_should_reset_time () {
                 var timeMonitor = Substitute.For<ITimeMonitor>();
                 var waitTime = new WaitTime(timeMonitor) {time = 1};
+                waitTime.testMode = true;
 
                 timeMonitor.DeltaTime.Returns(2);
                 waitTime.Update();
