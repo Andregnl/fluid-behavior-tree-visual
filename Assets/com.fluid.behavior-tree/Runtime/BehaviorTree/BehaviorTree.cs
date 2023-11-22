@@ -19,7 +19,8 @@ namespace CleverCrow.Fluid.BTs.Trees {
     [CreateAssetMenu(menuName = "ScriptableObjects/BehaviorTree")]
     public class BehaviorTree : IBehaviorTree {
         private GameObject _owner = null;
-        [SerializeField] public List<ITask> _tasks = new List<ITask>();
+
+        private List<ITask> _tasks = new List<ITask>();
         [SerializeField] public List<ITask> allNodes = new List<ITask>();
         [SerializeField] public List<ITask> nodesToSave = new List<ITask>();
 
@@ -34,6 +35,11 @@ namespace CleverCrow.Fluid.BTs.Trees {
         //         hasBeenInitialized = true;
         //     }
         // }
+
+        public void ResetActiveTasks()
+        {
+            _tasks = new List<ITask>();
+        }
 
         public void CreateRootNode()
         {

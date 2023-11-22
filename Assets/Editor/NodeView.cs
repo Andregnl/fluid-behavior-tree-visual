@@ -26,8 +26,37 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         CreateInputPorts();
         CreateOutputPorts();
         CreatStyles();
+        if (node.HasBeenActive)
+        {
+            AddBorder(Color.green, 3, 10);
+            Debug.Log("Ativei nó:" + node.Name);
+        }
+        else
+        {
+            RemoveBorder();
+            Debug.Log("Desativei nó:" + node.Name);
+        }
     }
 
+    void RemoveStyles()
+    {
+        if (node is TaskRoot)
+        {
+            RemoveFromClassList("root");
+        }
+        else if (node is TaskBase)
+        {
+            RemoveFromClassList("task");
+        }
+        else if (node is DecoratorBase)
+        {
+            RemoveFromClassList("decorator");
+        }
+        else if (node is TaskParentBase)
+        {
+            RemoveFromClassList("taskparent");
+        }
+    }
     void CreatStyles()
     {
         if (node is TaskRoot)
@@ -45,8 +74,33 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         else if (node is TaskParentBase)
         {
             AddToClassList("taskparent");
-        }  
+        }
     }
+
+    void AddBorder(Color color, float width, float roundness)
+    {
+        style.borderBottomColor = color;
+        style.borderBottomWidth = width;
+        style.borderBottomLeftRadius = roundness;
+        style.borderBottomRightRadius = roundness;
+
+        style.borderTopColor = color;
+        style.borderTopWidth = width;
+        style.borderTopLeftRadius = roundness;
+        style.borderTopRightRadius = roundness;
+
+        style.borderRightColor = color;
+        style.borderRightWidth = width;
+
+        style.borderLeftColor = color;
+        style.borderLeftWidth = width;
+    }
+
+    void RemoveBorder()
+    {
+        AddBorder(Color.clear, 0, 0);
+    }
+
     void CreateInputPorts()
     {
         if (node is TaskRoot) return;

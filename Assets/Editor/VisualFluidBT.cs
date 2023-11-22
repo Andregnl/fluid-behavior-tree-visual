@@ -15,6 +15,8 @@ public class VisualFluidBT : EditorWindow
 
     VisualFluidBTView visualFuildBTView;
     InspectorView inspectorView;
+    BehaviorTree tree;
+    bool treeIsReset = false;
 
     [MenuItem("Window/VisualFluidBT")]
     public static void OpenWindow()
@@ -26,6 +28,45 @@ public class VisualFluidBT : EditorWindow
     void OnEnterPlayMode(PlayModeStateChange state)
     {
         visualFuildBTView.SaveTree();
+    }
+
+    // void OnGUI()
+    // {
+    //     Debug.Log("ARVORE: " + tree.name);
+    //     if (Application.isPlaying) return;
+
+    //     // Each editor window contains a root VisualElement object
+    //     VisualElement root = rootVisualElement;
+
+    //     // Instantiate UXML
+    //     VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
+    //     //root.Add(labelFromUXML);
+
+    //     visualFuildBTView = root.Q<VisualFluidBTView>();
+    //     inspectorView =  root.Q<InspectorView>();
+
+    //     // staticVisualBT = visualFuildBTView;
+    //     tree = Selection.activeObject as BehaviorTree;
+
+    //     if (tree)
+    //     {
+    //         visualFuildBTView.PopulateView(tree);
+    //     }
+    //     //root.Remove(labelFromUXML);
+    // }
+
+    private void Update()
+    {
+        if (Application.isPlaying)
+        {
+            OnReloadScripts();
+            treeIsReset = false;
+        }
+        else if (!treeIsReset)
+        {
+            OnExitPlayMode();
+            treeIsReset = true;
+        }
     }
 
     public void CreateGUI()
@@ -56,7 +97,6 @@ public class VisualFluidBT : EditorWindow
         var buttons = root.Query<Button>();
         buttons.ForEach(RegisterHandler);
     }
-
     void RegisterHandler(Button button)
     {
         button.RegisterCallback<ClickEvent>(SaveTree);
@@ -69,7 +109,7 @@ public class VisualFluidBT : EditorWindow
 
     private void OnSelectionChange()
     {
-        BehaviorTree tree = Selection.activeObject as BehaviorTree;
+        tree = Selection.activeObject as BehaviorTree;
 
         if (tree)
         {
@@ -90,6 +130,15 @@ public class VisualFluidBT : EditorWindow
         {
             staticVisualBT.PopulateView(tree);
         }
-        Debug.Log("Scripts foram recompilados...");
+    }
+
+    private static void OnExitPlayMode()
+    {
+        BehaviorTree tree = Selection.activeObject as BehaviorTree;
+
+        if (tree && staticVisualBT != null)
+        {
+            staticVisualBT.ResetTree(tree);
+        }
     }
 }

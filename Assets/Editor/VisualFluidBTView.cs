@@ -76,6 +76,38 @@ public class VisualFluidBTView : GraphView
         return GetNodeByGuid(node.guid) as NodeView;
     }
 
+    public void ResetTree(BehaviorTree tree)
+    {
+        tree.ResetActiveTasks();
+
+        graphViewChanged -= OnGraphViewChanged;
+        DeleteElements(graphElements);
+        graphViewChanged += OnGraphViewChanged;
+
+        tree.allNodes.ForEach(n => {
+            n.time = 0.0f;
+            n.NeedsToResetHasBeenActive = false;
+            n.HasBeenActive = false;
+            CreateNodeView(n);
+        });
+
+        tree.allNodes.ForEach(n => {
+            var children = tree.GetChildren(n);
+
+            if (children != null)
+            {
+                children.ForEach(c => {
+                    NodeView parentView = FindNodeView(n);
+                    NodeView childView = FindNodeView(c);
+
+                    Edge edge = parentView.outputPort.ConnectTo(childView.inputPort);
+                    AddElement(edge);
+                });
+            }
+        });
+
+    }
+
     public void PopulateView(BehaviorTree tree)
     {
         this.tree = tree;
@@ -84,7 +116,18 @@ public class VisualFluidBTView : GraphView
         DeleteElements(graphElements);
         graphViewChanged += OnGraphViewChanged;
 
-        tree.allNodes.ForEach(n => CreateNodeView(n));
+        tree.allNodes.ForEach(n => {
+            if (n.NeedsToResetHasBeenActive)
+                n.time += Time.deltaTime;
+
+            if (n.time > 0.1f)
+            {
+                n.time = 0.0f;
+                n.NeedsToResetHasBeenActive = false;
+                n.HasBeenActive = false;
+            }
+            CreateNodeView(n);
+        });
 
         tree.allNodes.ForEach(n => {
             var children = tree.GetChildren(n);

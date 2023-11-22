@@ -1,3 +1,8 @@
+using UnityEngine;
+using System.Collections;
+using System;
+using System.Collections.Generic;
+
 namespace CleverCrow.Fluid.BTs.Tasks {
     public abstract class GenericTaskBase : ITask{
         private EditorRuntimeUtilities _editorUtils;
@@ -21,8 +26,17 @@ namespace CleverCrow.Fluid.BTs.Tasks {
 #endif
             
             HasBeenActive = true;
-
             return TaskStatus.Success;
+        }
+
+        public void ResetHasBeenActive()
+        {
+            NeedsToResetHasBeenActive = true;
+        }
+
+        public override void ResetTask()
+        {
+
         }
     }
 }

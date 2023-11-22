@@ -19,6 +19,7 @@ namespace CleverCrow.Fluid.BTs.TaskParents {
             var status = OnUpdate();
             LastStatus = status;
             if (status != TaskStatus.Continue) {
+                ResetHasBeenActive();
                 ResetTask();
             }
 
@@ -32,6 +33,7 @@ namespace CleverCrow.Fluid.BTs.TaskParents {
 
             if (_lastTickCount != ParentTree.TickCount) {
                 ResetTask();
+                ResetHasBeenActive();
             }
 
             _lastTickCount = ParentTree.TickCount;
