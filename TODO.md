@@ -8,3 +8,4 @@
 * To fix Unity Editor launching bugs
   + Multiple serialization of fields
   + Value can not be null
+* To create a Tree-Global environment for shared variables between multiple nodes
