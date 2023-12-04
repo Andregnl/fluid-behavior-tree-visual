@@ -31,7 +31,7 @@ Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas
 
 ### Creating new nodes from ActionBase
 
-1. Creating new actions is the same as it was beafore with the original FluidBT. Open (ACTION BASE DIRECTORY) and create a new script with a new class inheriting from ActionBase
+1. Creating new actions is the same as it was beafore with the original FluidBT. Open the directory where all actions are located, just for the sake of project organization,  and create a new script with a new class inheriting from ActionBase
 2. Override the ActionBase methods and create your own node behavior
 3. After recompiling the project, the new custom node option will appear on the right-click menu and can be created like any other node
 
