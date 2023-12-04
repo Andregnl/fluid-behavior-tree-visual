@@ -18,6 +18,7 @@ Visual BT is a visual implementation of behavior trees for Unity projects. This 
 Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas).
 
 ### How to create a tree in the Graphical Interface
+
 1. Add the component `BTRunner` to the object you want to control
 2. Create a new `BehaviorTree` at your current directory by right-clicking and then selecting `Create > ScriptableObjects > BehaviorTree`
 3. Drag and drop the new asset into the _Tree_ proprerty of `BTRunner`
@@ -27,6 +28,12 @@ Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas
 7. Create the tree you want by selecting the nodes on the right-click menu, editing their properties in the left _Inspector_ and then connecting them by creating edges
 8. When you are done hit the `Save` button below the _Inspector_ View
 9. Run the scene to check your behavior
+
+### Creating new nodes from ActionBase
+
+1. Creating new actions is the same as it was beafore with the original FluidBT. Open (ACTION BASE DIRECTORY) and create a new script with a new class inheriting from ActionBase
+2. Override the ActionBase methods and create your own node behavior
+3. After recompiling the project, the new custom node option will appear on the right-click menu and can be created like any other node
 
 ### Screenshots
 ![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/34aa6dbb-65c5-4e2a-9a06-d13c865497d2)
