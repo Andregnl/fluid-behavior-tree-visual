@@ -69,6 +69,12 @@ Finally, we started altering the style sheets of the node views to give them a
 customized apperance and make them more distintic. This was done by editing the 
 _UXML_ files on the UI Builder tool.
 
+### New Nodes
+
++ __True Selector Random:__ the original _SelectorRandom_ has the standard behavior of randomly choosing one of its children and then executing it, but not changing the selected child until the _BehaviorTree_ resets. Alternatively, the _TrueSelectorRandom_ was created such that it selects a new random child everytime a new behavior flow passes through it.
+
++ __Interrupt:__ NOT IMPLEMENTED YET
+
 ---
 
 # Fluid BT
