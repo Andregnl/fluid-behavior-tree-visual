@@ -37,9 +37,9 @@ The first image demonstrates how to open the VisualFluidBT window
 
 This image shows the path to create a new Behavior Tree asset
 
-![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/ed2bcc38-1bcd-4ab5-a4e4-1914442cb378)
+![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/blob/develop/screenshots/NewEditor.png?raw=true)
 
-In the image above, we can see an example of a tree being edited
+In the image above, we can see an example of a tree with the applied UXML for each type of node
 
 ### Implementation of the Graphical Interface
 The first step in creating the new Visual and programmable interface for FluidBT was
