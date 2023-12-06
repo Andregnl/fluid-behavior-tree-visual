@@ -31,7 +31,7 @@ public class VisualFluidBTView : GraphView
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
 
-        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/VisualFluidBT.uss");
+        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Packages/com.fluid.behavior-tree/Editor/VisualFluidBT.uss");
         styleSheets.Add(styleSheet);
     }
 

@@ -6,6 +6,7 @@ using CleverCrow.Fluid.BTs.Trees;
 public class BTRunner : MonoBehaviour
 {
     [SerializeField] BehaviorTree tree;
+	private bool runTree = true;
 
     private bool hasPrintedWarning = false;
 
@@ -17,6 +18,7 @@ public class BTRunner : MonoBehaviour
 
     void Update()
     {
+		if (!runTree) return;
         if (tree.Root == null)
         {
             if (!hasPrintedWarning)
@@ -30,4 +32,7 @@ public class BTRunner : MonoBehaviour
 
         tree.Tick();
     }
+
+	public void ReStartTree() { runTree = true; }
+	public void StopTree() { runTree = false; }
 }

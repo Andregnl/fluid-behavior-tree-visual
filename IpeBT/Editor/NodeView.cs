@@ -14,7 +14,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public Port inputPort;
     public Port outputPort;
 
-    public NodeView(ITask node) : base("Assets/Editor/NodeView.uxml")
+    public NodeView(ITask node) : base("Packages/com.fluid.behavior-tree/Editor/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;
