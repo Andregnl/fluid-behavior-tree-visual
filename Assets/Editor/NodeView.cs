@@ -26,7 +26,11 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         CreateInputPorts();
         CreateOutputPorts();
         CreatStyles();
-        if (node.HasBeenActive)
+    }
+
+	public void UpdateNodeView()
+	{
+		if (node.HasBeenActive)
         {
             AddBorder(Color.green, 3, 10);
             Debug.Log("Ativei nó:" + node.Name);
@@ -36,7 +40,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
             RemoveBorder();
             Debug.Log("Desativei nó:" + node.Name);
         }
-    }
+	}
 
     void RemoveStyles()
     {
