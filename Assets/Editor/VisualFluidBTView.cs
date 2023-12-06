@@ -108,6 +108,21 @@ public class VisualFluidBTView : GraphView
 
     }
 
+	public void UpdateNodeViews(BehaviorTree tree)
+	{
+		tree.allNodes.ForEach(n => {
+            if (n.NeedsToResetHasBeenActive)
+                n.time += Time.deltaTime;
+
+            if (n.time > 0.1f)
+            {
+                n.time = 0.0f;
+                n.NeedsToResetHasBeenActive = false;
+                n.HasBeenActive = false;
+            }
+			FindNodeView(n).UpdateNodeView();
+        });
+	}
     public void PopulateView(BehaviorTree tree)
     {
         this.tree = tree;
@@ -178,7 +193,7 @@ public class VisualFluidBTView : GraphView
 
         return graphViewChange;
     }
-    
+
     void CreateNodeView(ITask node)
     {
         Debug.Log("Create Node View");

@@ -59,7 +59,7 @@ public class VisualFluidBT : EditorWindow
     {
         if (Application.isPlaying)
         {
-            OnReloadScripts();
+            OnUpdateTreeView();
             treeIsReset = false;
         }
         else if (!treeIsReset)
@@ -129,6 +129,16 @@ public class VisualFluidBT : EditorWindow
         if (tree && staticVisualBT != null)
         {
             staticVisualBT.PopulateView(tree);
+        }
+    }
+
+	private static void OnUpdateTreeView()
+    {
+        BehaviorTree tree = Selection.activeObject as BehaviorTree;
+
+        if (tree && staticVisualBT != null)
+        {
+            staticVisualBT.UpdateNodeViews(tree);
         }
     }
 
