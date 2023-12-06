@@ -14,7 +14,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public Port inputPort;
     public Port outputPort;
 
-    public NodeView(ITask node) : base("Assets/Editor/NodeView.uxml")
+    public NodeView(ITask node) : base("Packages/com.fluid.behavior-tree/Editor/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;
@@ -26,7 +26,11 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         CreateInputPorts();
         CreateOutputPorts();
         CreatStyles();
-        if (node.HasBeenActive)
+    }
+
+	public void UpdateNodeView()
+	{
+		if (node.HasBeenActive)
         {
             AddBorder(Color.green, 3, 10);
             Debug.Log("Ativei nó:" + node.Name);
@@ -36,7 +40,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
             RemoveBorder();
             Debug.Log("Desativei nó:" + node.Name);
         }
-    }
+	}
 
     void RemoveStyles()
     {

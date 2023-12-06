@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "clever-crow.nsubstitute": "2.0.3",
+    "com.fluid.behavior-tree": "file:../IpeBT",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ads": "4.4.2",

@@ -31,7 +31,7 @@ public class VisualFluidBTView : GraphView
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
 
-        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/VisualFluidBT.uss");
+        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Packages/com.fluid.behavior-tree/Editor/VisualFluidBT.uss");
         styleSheets.Add(styleSheet);
     }
 
@@ -108,6 +108,21 @@ public class VisualFluidBTView : GraphView
 
     }
 
+	public void UpdateNodeViews(BehaviorTree tree)
+	{
+		tree.allNodes.ForEach(n => {
+            if (n.NeedsToResetHasBeenActive)
+                n.time += Time.deltaTime;
+
+            if (n.time > 0.1f)
+            {
+                n.time = 0.0f;
+                n.NeedsToResetHasBeenActive = false;
+                n.HasBeenActive = false;
+            }
+			FindNodeView(n).UpdateNodeView();
+        });
+	}
     public void PopulateView(BehaviorTree tree)
     {
         this.tree = tree;
