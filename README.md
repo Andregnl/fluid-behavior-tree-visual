@@ -18,6 +18,7 @@ Visual BT is a visual implementation of behavior trees for Unity projects. This 
 Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas).
 
 ### How to create a tree in the Graphical Interface
+
 1. Add the component `BTRunner` to the object you want to control
 2. Create a new `BehaviorTree` at your current directory by right-clicking and then selecting `Create > ScriptableObjects > BehaviorTree`
 3. Drag and drop the new asset into the _Tree_ proprerty of `BTRunner`
@@ -28,6 +29,12 @@ Check out our [Kanban on Trello](https://trello.com/b/GKl44UAN/kanban-de-tarefas
 8. When you are done hit the `Save` button below the _Inspector_ View
 9. Run the scene to check your behavior
 
+### Creating new nodes from ActionBase
+
+1. Creating new actions is the same as it was beafore with the original FluidBT. Open the directory where all actions are located, just for the sake of project organization, and create a new script with a new class inheriting from ActionBase
+2. Override the ActionBase methods and create your own node behavior
+3. After recompiling the project, the new custom node option will appear on the right-click menu and can be created like any other node
+
 ### Screenshots
 ![image](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/34aa6dbb-65c5-4e2a-9a06-d13c865497d2)
 
@@ -37,9 +44,13 @@ The first image demonstrates how to open the VisualFluidBT window
 
 This image shows the path to create a new Behavior Tree asset
 
-![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/assets/62215634/ed2bcc38-1bcd-4ab5-a4e4-1914442cb378)
+![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/blob/develop/screenshots/NewEditor.png?raw=true)
 
-In the image above, we can see an example of a tree being edited
+In the image above, we can see an example of a tree with the applied UXML for each type of node
+
+![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/blob/develop/screenshots/TreeFlowExample.png?raw=true)
+
+The image above shows the Behavior Tree in motion during time of execution. We can see that active nodes have a green outline to showcase what portion of the Behavior Tree is currently running.
 
 ### Implementation of the Graphical Interface
 The first step in creating the new Visual and programmable interface for FluidBT was
@@ -61,6 +72,13 @@ _Tree View_, the _Inspector_ must quickly switch to show the new node's properti
 Finally, we started altering the style sheets of the node views to give them a
 customized apperance and make them more distintic. This was done by editing the 
 _UXML_ files on the UI Builder tool.
+
+### New Nodes
+
++ __True Selector Random:__ the original _SelectorRandom_ has the standard behavior of randomly choosing one of its children and then executing it, but not changing the selected child until the _BehaviorTree_ resets. Alternatively, the _TrueSelectorRandom_ was created such that it selects a new random child everytime a new behavior flow passes through it.
++ __Play Sound:__ this node plays a chosen sound at a specific location in the Scene. The location of the sound is shows as a parameter that can be freely changed.
+
++ __Interrupt:__ NOT IMPLEMENTED YET
 
 ---
 
