@@ -48,6 +48,10 @@ This image shows the path to create a new Behavior Tree asset
 
 In the image above, we can see an example of a tree with the applied UXML for each type of node
 
+![VisualFluidBT window](https://github.com/IpeBT/fluid-behavior-tree-visual/blob/develop/screenshots/TreeFlowExample.png?raw=true)
+
+The image above shows the Behavior Tree in motion during time of execution. We can see that active nodes have a green outline to showcase what portion of the Behavior Tree is currently running.
+
 ### Implementation of the Graphical Interface
 The first step in creating the new Visual and programmable interface for FluidBT was
 transforming all of its major components into _Scriptable Objects_. This was necessary
