@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.fluid.behavior-tree/Editor/NodeViewStyle.uss?fileID=7433441132597879392&amp;guid=7fbdd15f923adaa46adc200f8b2e4bc4&amp;type=3#NodeViewStyle" />
+    <ui:VisualElement name="node-border" style="background-color: rgb(0, 0, 0); background-image: none; -unity-background-image-tint-color: rgb(255, 255, 255); border-top-left-radius: 9px; border-top-right-radius: 9px; border-bottom-right-radius: 9px; border-bottom-left-radius: 9px; overflow: hidden; visibility: visible; opacity: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1;">
+        <ui:VisualElement name="contents" style="background-color: rgb(48, 48, 48); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; background-image: none;">
+            <ui:VisualElement name="top">
+                <ui:VisualElement name="input" style="background-color: rgb(49, 49, 49); right: 0; flex-basis: 15px; padding-left: 6px; min-height: 0; max-height: 10px; background-image: url(&apos;project://database/Packages/com.fluid.behavior-tree/Runtime/teste.png?fileID=2800000&amp;guid=58a819d2a5f2d2967ae5e3fbc80b685a&amp;type=3#teste&apos;);" />
+                <ui:VisualElement name="title" style="background-color: rgba(0, 0, 0, 0); background-image: none; -unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#LegacyRuntime&apos;); color: rgb(233, 228, 226); -unity-font-style: bold; white-space: normal; -unity-text-align: upper-center; height: 32px;">
+                    <ui:Label name="title-label" text="DebugLogNode" class="unity-text-element unity-label" />
+                    <ui:VisualElement name="title-button-container">
+                        <ui:VisualElement name="collapse-button">
+                            <ui:VisualElement name="icon" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="divider" class="vertical" style="background-color: rgb(36, 36, 36);" />
+                <ui:VisualElement name="output" style="background-color: rgb(31, 31, 31); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-right-width: 0; border-left-width: 0; left: 0; justify-content: flex-start; margin-left: 0; -unity-background-scale-mode: stretch-to-fill; align-items: center; align-self: auto; margin-right: 0; -unity-slice-right: 0; scale: 1 1; transform-origin: center; position: relative; top: 0; overflow: visible; flex-basis: 12px; flex-shrink: 0; flex-grow: 0; flex-direction: column; flex-wrap: nowrap; padding-right: 10px; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="selection-border" picking-mode="Ignore" style="background-image: none;" />
+</ui:UXML>
