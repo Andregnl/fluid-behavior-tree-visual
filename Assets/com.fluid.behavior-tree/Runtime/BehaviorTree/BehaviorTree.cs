@@ -136,6 +136,8 @@ namespace CleverCrow.Fluid.BTs.Trees {
 
         public void AddChild(ITask parent, ITask child)
         {
+            //Aqui que é preciso ver se não há como dar uma volta entre parent e child
+            
             parent.Children.Add(child);
         }
 
